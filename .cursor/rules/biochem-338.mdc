@@ -1,0 +1,20 @@
+---
+description: 在 sdu 工作区整理上交 338 生物化学主观题库时遵循专用 skill，并隔离 LUSC 生信分析文件。
+globs: sdu/**
+alwaysApply: false
+---
+
+在 `sdu/` 下工作即视为上交 338 生物化学题库任务（对应用户本地 `D:\sdu`）。
+
+必须先读取并遵循：
+
+- `.cursor/skills/biochem-338-question-bank/SKILL.md`（建库）
+- 或 `.cursor/skills/biochem-338-review/SKILL.md`（已有题库上抽题背诵）
+
+构建题库时优先委派 / 遵循 `.cursor/agents/biochem-338-builder.md`。
+
+原始资料目录：`sdu/生化资料/338（生物化学）资料/`
+题库输出目录：`sdu/338-题库/`
+
+不要修改本仓库中的 LUSC 生信分析文件（`scripts/`、`data/`、`results/`、根目录分析 README 结论等）。
+原题必须保留原文。AI 生成内容必须标记 `[AI生成]`。每完成一章必须停止等待确认。
