@@ -7,7 +7,7 @@ description: >-
 icon: book-open
 color: blue
 paths:
-  - "sjtu-338-biochem/**"
+  - "sdu/**"
 ---
 
 # 上海交通大学 338 生物化学主观题题库构建
@@ -30,10 +30,11 @@ paths:
 
 客观题（选择题、判断题、填空题、其他）不能直接作为最终训练题型，但其知识点必须提取并纳入知识库。
 
-工作区根目录：`sjtu-338-biochem/`
+工作区根目录：`sdu/`（对应用户电脑上的 `D:\sdu`）
 
-- 原始资料放入：`sjtu-338-biochem/sources/`
-- 题库输出放入：`sjtu-338-biochem/knowledge-base/`
+- 原始资料放入：`sdu/生化资料/338（生物化学）资料/`
+- 题库输出放入：`sdu/338-题库/`
+- 资料清单：`sdu/source_manifest.md`
 - 不要修改仓库中 `scripts/`、`data/`、`results/` 等 LUSC 生信分析文件。
 
 ---
@@ -146,7 +147,7 @@ Step 14 输出 Markdown
 每章输出到：
 
 ```text
-sjtu-338-biochem/knowledge-base/Chapter_XX/
+sdu/338-题库/Chapter_XX/
 ├── 01_知识框架.md
 ├── 02_核心知识点.md
 ├── 03_原始题目库.md
@@ -164,8 +165,8 @@ sjtu-338-biochem/knowledge-base/Chapter_XX/
 全局文件：
 
 ```text
-sjtu-338-biochem/source_manifest.md
-sjtu-338-biochem/knowledge-base/_index.md
+sdu/source_manifest.md
+sdu/338-题库/_index.md
 ```
 
 章节名称以用户资料为准，不要强行使用预设章名。

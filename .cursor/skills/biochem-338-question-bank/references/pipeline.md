@@ -7,7 +7,7 @@
 建立并持续更新：
 
 ```text
-sjtu-338-biochem/source_manifest.md
+sdu/source_manifest.md
 ```
 
 记录所有输入资料。格式：
@@ -20,7 +20,7 @@ sjtu-338-biochem/source_manifest.md
 
 如果无法确定来源：`source_type = 未确定`。不要猜。
 
-原始资料默认放在 `sjtu-338-biochem/sources/`。用户在对话中上传的文件也要登记进 manifest，并尽可能保存副本到 `sources/`。
+原始资料默认放在 `sdu/生化资料/338（生物化学）资料/`（对应用户本地 `D:\sdu\生化资料\338（生物化学）资料`）。用户在对话中上传的文件也要登记进 manifest，并尽可能保存副本到该目录。
 
 ## Step 2 文件分类
 
@@ -42,7 +42,7 @@ sjtu-338-biochem/source_manifest.md
 - 可用 `pdftotext`、Python、Read 工具等现有能力；不要因为格式麻烦而跳过
 - 可先运行 skill 内脚本：`.cursor/skills/biochem-338-question-bank/scripts/extract-sources.sh`
 - 提取失败时在 manifest 中标记「提取失败」，并说明原因
-- 提取结果可缓存到 `sjtu-338-biochem/sources/_extracted/`，文件名对应 `source_id`
+- 提取结果可缓存到 `sdu/生化资料/338（生物化学）资料/_extracted/`，文件名对应 `source_id`
 - 不要在提取阶段就开始写题
 
 ## Step 4 章节识别

@@ -3,7 +3,7 @@
 ## 章节输出结构
 
 ```text
-sjtu-338-biochem/knowledge-base/Chapter_XX/
+sdu/338-题库/Chapter_XX/
 ├── 01_知识框架.md
 ├── 02_核心知识点.md
 ├── 03_原始题目库.md
@@ -246,6 +246,6 @@ Check 1–10：...
 ...
 ```
 
-完成后更新 `sjtu-338-biochem/knowledge-base/_index.md`。
+完成后更新 `sdu/338-题库/_index.md`。
 
 然后 **STOP**，等待用户确认。不得自动进入下一章。

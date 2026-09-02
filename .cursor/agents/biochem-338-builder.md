@@ -5,20 +5,20 @@ description: >-
   biochemistry study materials, homework, exam papers, or asks to organize 338
   subjective questions by chapter (名词解释/简答/论述), or says 从第N章开始.
   Always use for converting mixed biochem notes into a traceable subjective question bank.
-  Do not use for LUSC bioinformatics analysis.
+  Work only under sdu/. Do not use for LUSC bioinformatics analysis.
 ---
 
 你是「上海交通大学 338 生物化学主观题库」构建 Agent。
 
-工作区：`sjtu-338-biochem/`
-原始资料：`sjtu-338-biochem/sources/`
-题库输出：`sjtu-338-biochem/knowledge-base/`
+工作区：`sdu/`（对应用户电脑 `D:\sdu`）
+原始资料：`sdu/生化资料/338（生物化学）资料/`
+题库输出：`sdu/338-题库/`
 
 ## 启动时必须做的事
 
 1. 读取 `.cursor/skills/biochem-338-question-bank/SKILL.md`
 2. 读取 `.cursor/skills/biochem-338-question-bank/references/principles.md`
-3. 查看 `sjtu-338-biochem/source_manifest.md` 和 `sources/` 里已有资料
+3. 查看 `sdu/source_manifest.md` 和 `sdu/生化资料/338（生物化学）资料/` 里已有资料
 4. 若用户未指定章节：询问是否从第 1 章开始，或根据资料目录提出建议。不要擅自处理全部章节。
 5. 若用户指定「从第N章开始」：只处理第 N 章，完成后 STOP。
 
@@ -59,4 +59,4 @@ description: >-
 - 输出与质检：`references/output-and-qa.md`
 - 格式模板：`assets/`
 
-完成后更新 `source_manifest.md` 与 `knowledge-base/_index.md`，并给出该章可背诵入口（高频名词解释 / 简答 / 论述 / 真题）。
+完成后更新 `sdu/source_manifest.md` 与 `sdu/338-题库/_index.md`，并给出该章可背诵入口（高频名词解释 / 简答 / 论述 / 真题）。

@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# Extract text from files in sjtu-338-biochem/sources into sources/_extracted/
-# Usage: scripts/extract-sources.sh
+# Extract text from sdu/生化资料/338（生物化学）资料 into _extracted/
+# Usage: .cursor/skills/biochem-338-question-bank/scripts/extract-sources.sh
 set -euo pipefail
 
 ROOT="$(git rev-parse --show-toplevel 2>/dev/null || true)"
 if [[ -z "$ROOT" ]]; then
   ROOT="$(cd "$(dirname "$0")/../../../.." && pwd)"
 fi
-SRC="$ROOT/sjtu-338-biochem/sources"
+SRC="$ROOT/sdu/生化资料/338（生物化学）资料"
 OUT="$SRC/_extracted"
 mkdir -p "$OUT"
 
@@ -16,13 +16,13 @@ if [[ ! -d "$SRC" ]]; then
   exit 1
 fi
 
-shopt -s nullglob
 count=0
-for f in "$SRC"/*; do
+while IFS= read -r -d '' f; do
+  rel="${f#"$SRC"/}"
   base="$(basename "$f")"
   [[ "$base" == "README.md" || "$base" == ".gitkeep" ]] && continue
-  [[ -d "$f" ]] && continue
-  dest="$OUT/${base}.txt"
+  dest="$OUT/${rel}.txt"
+  mkdir -p "$(dirname "$dest")"
   ext="${base##*.}"
   ext_lc="$(printf '%s' "$ext" | tr 'A-Z' 'a-z')"
   case "$ext_lc" in
@@ -46,18 +46,18 @@ except Exception as e:
     sys.exit(0)
 PY
       else
-        echo "[extract skipped: no pdftotext/python] $base" > "$dest"
+        echo "[extract skipped: no pdftotext/python] $rel" > "$dest"
       fi
       ;;
     txt|md|markdown|csv)
       cp "$f" "$dest"
       ;;
     *)
-      echo "[binary or unsupported; open with agent Read tool] $base" > "$dest"
+      echo "[binary or unsupported; open with agent Read tool] $rel" > "$dest"
       ;;
   esac
-  echo "extracted: $base"
+  echo "extracted: $rel"
   count=$((count + 1))
-done
+done < <(find "$SRC" -type f ! -path '*/_extracted/*' -print0)
 
 echo "done: $count file(s) -> $OUT"
